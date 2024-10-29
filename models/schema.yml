@@ -56,3 +56,12 @@ sources:
             description: cout logistique
           - name: ship_cost
             description: cout d'expedition - payé par l'entreprise
+models:
+   - name: int_orders_margin
+     description: calcul de la marge par commande
+     columns:
+       - name: orders_id
+         description: primary key
+         tests:
+           - unique:
+               column_name : orders_id
