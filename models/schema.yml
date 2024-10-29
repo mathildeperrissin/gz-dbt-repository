@@ -7,14 +7,14 @@ sources:
       - name: sales
         identifier: raw_gz_sales
         description: sales of Greenweez / we have one row per product_id found in each orders_id
-        
-        # freshness test: 
+
+        # freshness test:
         loaded_at_field: "CAST(date_date AS TIMESTAMP)"
-        freshness: 
+        freshness:
           warn_after:
             count: 90
             period: day
-        
+
         columns:
           - name: date_date
             description: date de commande
@@ -47,9 +47,9 @@ sources:
             description: primary key
             tests:
               - unique:
-                  column_name : orders_id
+                  column_name: orders_id
               - not_null:
-                  column_name : orders_id
+                  column_name: orders_id
           - name: shipping_fee
             description: frais d'expédition - payé par le client
           - name: logcost
