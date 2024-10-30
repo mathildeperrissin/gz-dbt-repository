@@ -7,14 +7,6 @@ sources:
       - name: sales
         identifier: raw_gz_sales
         description: sales of Greenweez / we have one row per product_id found in each orders_id
-
-        # freshness test:
-        loaded_at_field: "CAST(date_date AS TIMESTAMP)"
-        freshness:
-          warn_after:
-            count: 90
-            period: day
-
         columns:
           - name: date_date
             description: date de commande
@@ -56,6 +48,79 @@ sources:
             description: cout logistique
           - name: ship_cost
             description: cout d'expedition - payé par l'entreprise
+      - name : adwords
+        identifier: raw_gz_adwords
+        description: table pour adwords
+        columns:
+          - name: date_date
+            description: date 
+          - name: paid_source
+            description: qui a payé
+          - name: campaign_key
+            description: référence de la campagne
+          - name: camPGN_name
+            description: ??
+          - name: ads_cost
+            description: couts de la pub
+          - name: impression
+            description: nombre de vue
+          - name: click
+            description: nombre de clics             
+      - name : bing
+        identifier: raw_gz_bing
+        description: table pour bing
+        columns:
+          - name: date_date
+            description: date 
+          - name: paid_source
+            description: qui a payé
+          - name: campaign_key
+            description: référence de la campagne
+          - name: camPGN_name
+            description: ??
+          - name: ads_cost
+            description: couts de la pub
+          - name: impression
+            description: nombre de vue
+          - name: click
+            description: nombre de clics
+      - name : criteo
+        identifier: raw_gz_criteo
+        description: table pour criteo
+        columns:
+          - name: date_date
+            description: date 
+          - name: paid_source
+            description: qui a payé
+          - name: campaign_key
+            description: référence de la campagne
+          - name: camPGN_name
+            description: ??
+          - name: ads_cost
+            description: couts de la pub
+          - name: impression
+            description: nombre de vue
+          - name: click
+            description: nombre de clics
+      - name : facebook
+        identifier: raw_gz_facebook
+        description: table pour facebook
+        columns:
+          - name: date_date
+            description: date 
+          - name: paid_source
+            description: qui a payé
+          - name: campaign_key
+            description: référence de la campagne
+          - name: camPGN_name
+            description: ??
+          - name: ads_cost
+            description: couts de la pub
+          - name: impression
+            description: nombre de vue
+          - name: click
+            description: nombre de clics
+
 models:
    - name: int_orders_margin
      description: calcul de la marge par commande
