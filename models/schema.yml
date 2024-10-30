@@ -130,3 +130,21 @@ models:
          tests:
            - unique:
                column_name : orders_id
+
+   - name: int_campaigns
+     description: add campaigns
+     columns:
+      - name : date_date
+        description: date 
+      - name: paid_source
+        description: qui a payé
+      - name: campaign_key
+        description: référence de la campagne
+      - name: camPGN_name
+        description: ??
+      - name: ads_cost
+        description: couts de la pub
+      - name: impression
+        description: nombre de vue
+      - name: click
+        description: nombre de clics
